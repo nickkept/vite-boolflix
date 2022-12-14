@@ -1,28 +1,28 @@
-<template></template>
 <script>
-import { store} from "./store";
-import axios from "axios";
-
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+import {store, fetchMovies } from './store';
+import axios from 'axios'
 export default {
-  // components: {CharacterList,FilterBanner },
+  components : {AppMain, AppHeader},
   data() {
     return {
       store
-    };
+    }
   },
-  created() {
-      axios.get("https://api.themoviedb.org/3/search/movie",{
-          params:{
-              api_key: "54bc7a33b220ba1f0937049acf190b4b",
-          }
-      } )
-          .then(resp => {
-              console.log(resp.data);
-          })   
+  computed :{
+    
   }
-}  
+}
 </script>
 
+<template>
+  <AppHeader></AppHeader>
+  <AppMain></AppMain>
+</template>
+
 <style lang="scss">
-@use "./styles/general.scss";
+	@use "./styles/general.scss";
+  
+  
 </style>

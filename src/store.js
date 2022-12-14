@@ -1,17 +1,39 @@
 import { reactive } from "vue";
 import axios from "axios";
 
-export const store = reactive ({
-    searchText: {},
-});
+export const store = reactive({
+    moviesList: [],
+    seriesList: [],
+    searchText: "",
 
-export function fetchMovies () {
-    axios.get("https://api.themoviedb.org/3/search/movie",{
-        params:{
-            api_key: "54bc7a33b220ba1f0937049acf190b4b",
-        } 
-    } )
-        .then(resp => {
-            console.log(resp.data);
-        });
+})
+
+
+
+export function fetchMovies() {
+
+    axios.get("https://api.themoviedb.org/3/search/movie", {
+        params: {
+            api_key: "1a953019a29582a3b5c59afbba707100",
+            query: store.searchText,
+        }
+    })
+        .then((resp) => {
+            console.log(resp.data.results);
+            store.moviesList = resp.data.results
+        })
+
+}
+export function fetchTvSeries() {
+    axios.get("https://api.themoviedb.org/3/search/tv", {
+        params: {
+            api_key: "1a953019a29582a3b5c59afbba707100",
+            query: store.searchText,
+        }
+    })
+        .then((resp) => {
+            console.log(resp.data.results);
+            store.seriesList = resp.data.results
+
+        })
 }
