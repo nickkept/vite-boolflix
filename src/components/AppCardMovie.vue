@@ -11,6 +11,7 @@
 </div>
 </template>
 <script>
+import { store } from '../store';
 export default {
     name:"AppCardMovie.vue",
     props:{
@@ -19,7 +20,9 @@ export default {
         }
     },
     data(){
-        return store
+        return {
+            store
+        }
     }
 };
 </script>

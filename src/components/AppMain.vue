@@ -17,7 +17,7 @@ export default {
     <AppCardMovie :film="film"></AppCardMovie>
   </div>
   <div v-for="(series,i) in store.seriesList" :key="i" >
-    <AppCardMovie :series="series"></AppCardMovie>
+    <AppCardTv :series="series"></AppCardTv>
   </div>
 </template>
 

@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     onSearchClick() {
-      (this.store.searchText = this.searchText), 
+      this.store.searchText = this.searchText;
       fetchMovies();
       fetchTvSeries();
     },
