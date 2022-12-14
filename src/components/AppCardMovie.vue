@@ -2,11 +2,11 @@
 <div class="card text-bg-dark" style="width: 18rem;">
     <img :src="'https://image.tmdb.org/t/p/' + 'w342' + film.poster_path" alt="" class="card-img-top">
     <div class="card-body">
-        <h5 class="card-title">{{film.title}}</h5>
-        <p class="card-text">{{film.original_title}}</p>
-        <p class="card-text">{{film.overview}}</p>
+        <h5 class="card-title">Title: {{film.title}}</h5>
+        <p class="card-text">Original Title: {{film.original_title}}</p>
         <p class="card-text">Language: <span v-if="language()" :class="language()"></span> <span v-else class="flag-icon flag-icon-xx">{{film.original_language}}</span></p>
-        <p class="card-text">{{film.vote_average}}</p>
+        <p class="card-text">Average Rating: {{film.vote_average}}</p>
+        <p class="card-text">Overview:{{film.overview}}</p>
     </div>
 </div>
 </template>
