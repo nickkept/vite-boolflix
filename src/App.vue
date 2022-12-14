@@ -1,7 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import {store, fetchMovies } from './store';
+import {store, fetchMovies, fetchTvSeries } from './store';
 import axios from 'axios'
 export default {
   components : {AppMain, AppHeader},
@@ -12,12 +12,20 @@ export default {
   },
   computed :{
     
+  },
+  methods:{
+    onSearch(searchTextEmitted) {
+      this.store.searchTextSt = searchTextEmitted;
+      fetchMovies();
+      fetchTvSeries();
+      console.log(searchTextEmitted);
+    }
   }
 }
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader @search="onSearch"></AppHeader>
   <AppMain></AppMain>
 </template>
 
