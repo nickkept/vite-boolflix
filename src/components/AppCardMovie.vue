@@ -6,7 +6,7 @@
         <p class="card-text fw-bold">Original Title: {{film.original_title}}</p>
         <p class="card-text">Language: <span v-if="language()" :class="language()"></span> 
             <span v-else class="flag-icon flag-icon-xx">{{film.original_language}}</span></p>
-        <p class="card-text">Average Rating: {{film.vote_average}}</p>
+        <p class="card-text"><i class="fa-solid fa-star"></i> {{film.vote_average}} </p>
         <p class="card-text">Overview: {{film.overview}}</p>
     </div>
 </div>
@@ -55,6 +55,9 @@ export default {
     height: 380px;
     overflow: hidden;
     position: relative;
+    i{
+        color: gold;
+    }
     &:hover{
         overflow: auto;
         // display: none;

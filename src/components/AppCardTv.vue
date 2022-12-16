@@ -6,7 +6,7 @@
             <p class="card-text fw-bold">{{series.original_name}}</p>
             <p class="card-text">Language: <span v-if="language()" :class="language()"></span> 
                 <span v-else class="flag-icon flag-icon-xx">{{series.original_language}}</span></p>
-            <p class="card-text">Average Rating: {{series.vote_average}}</p>
+            <p class="card-text"><i class="fa-solid fa-star"></i> {{series.vote_average}}</p>
             <p class="card-text">Overview: {{series.overview}}</p>
         </div>
     </div>
@@ -54,6 +54,9 @@
     height: 380px;
     overflow: hidden;
     position: relative;
+    i{
+        color: gold;
+    }
     &:hover{
         overflow: auto;
         // display: none;
