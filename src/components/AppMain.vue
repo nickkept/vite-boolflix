@@ -14,13 +14,13 @@ export default {
 
 <template>
   <div class="container">
-    <h2 class="text-center">Movies:</h2>
+    <h1 class="text-center fw-bold my-4">Movies:</h1>
     <div class="d-flex flex-wrap gap-4">
       <div v-for="(film,i) in store.moviesList" :key="i" >
         <AppCardMovie :film="film"></AppCardMovie>
       </div>
     </div>
-    <h2 class="text-center">Tv Series:</h2>
+    <h1 class="text-center fw-bold my-4">Tv Series:</h1>
     <div class="d-flex flex-wrap gap-4">
       <div  v-for="(series,i) in store.seriesList" :key="i" >
         <AppCardTv :series="series"></AppCardTv>

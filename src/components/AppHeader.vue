@@ -2,7 +2,7 @@
   <header class="bg-black">
     <div class="container">
       <div class="d-flex align-items-center justify-content-between">
-        <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" class="mt-4" alt="">
+        <img src="https://image.tmdb.org/t/p/w154/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" class="my-4" alt="">
         <form class="d-flex" @submit.prevent="onSearchClick">
           <input type="text" class="form-control" placeholder="I`m looking for:" v-model="searchText" />
           <button class="btn btn-light ms-3" >Search</button>
